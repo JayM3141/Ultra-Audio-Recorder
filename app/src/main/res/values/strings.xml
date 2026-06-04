@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ultra Audio Recorder</string>
+    <string name="settings">Settings</string>
+    <string name="record">Record</string>
+    <string name="stop">Stop</string>
+    <string name="pause">Pause</string>
+    <string name="listen">Listen</string>
+    <string name="select_mic">Select Microphone</string>
+    <string name="format_wav">WAV</string>
+    <string name="format_flac">FLAC</string>
+    <string name="format_m4a">M4A</string>
+    <string name="format_ogg">OGG/Vorbis</string>
+    <string name="channel_notification">Audio Recording</string>
+    <string name="notification_recording">Recording audio...</string>
+    <string name="notification_listening">Listening to audio...</string>
+    <string name="tab_recorder">Recorder</string>
+    <string name="tab_analysis">Analysis</string>
+    <string name="tab_dsp">DSP</string>
+    <string name="tab_array">Array</string>
+    <string name="tab_files">Files</string>
+    <string name="gain">Gain</string>
+    <string name="status">Status</string>
+    <string name="duration">00:00:00</string>
+</resources>

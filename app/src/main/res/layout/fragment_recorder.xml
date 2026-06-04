@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- Waveform / Oscilloscope -->
+        <com.ultraaudio.recorder.visualization.WaveformView
+            android:id="@+id/waveform_view"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Recording Settings -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:background="@color/card_dark">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Format"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <Spinner
+                    android:id="@+id/spinner_format"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:background="@color/surface_dark" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sample Rate"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <Spinner
+                    android:id="@+id/spinner_sample_rate"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:background="@color/surface_dark" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Channels"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+
+                <Spinner
+                    android:id="@+id/spinner_channels"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:background="@color/surface_dark" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Input Gain -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/card_dark">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Input Gain"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+
+            <SeekBar
+                android:id="@+id/seekbar_gain"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="8dp"
+                android:max="240"
+                android:progress="10" />
+
+            <TextView
+                android:id="@+id/tv_gain_value"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="x1.0"
+                android:textColor="@color/accent"
+                android:textSize="14sp"
+                android:textAlignment="textEnd" />
+        </LinearLayout>
+
+        <!-- Spectrum View -->
+        <com.ultraaudio.recorder.visualization.SpectrumView
+            android:id="@+id/spectrum_view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+</ScrollView>
