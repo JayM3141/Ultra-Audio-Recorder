@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <!-- Array Controls -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:background="@color/card_dark"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Microphone Array"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_configure_array"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Configure"
+                android:textSize="11sp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_start_array"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Start"
+                android:textSize="11sp"
+                android:layout_marginStart="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+        </LinearLayout>
+
+        <!-- 2D Topological Map -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2D Topological Heatmap"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            android:layout_marginBottom="4dp" />
+
+        <com.ultraaudio.recorder.visualization.TopologicalMapView
+            android:id="@+id/topological_map"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- View Mode Toggle -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="8dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_2d_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="2D View"
+                android:textSize="11sp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_3d_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="3D View"
+                android:textSize="11sp"
+                android:layout_marginStart="8dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_playback_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Playback"
+                android:textSize="11sp"
+                android:layout_marginStart="8dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+        </LinearLayout>
+
+        <!-- Playback Controls -->
+        <LinearLayout
+            android:id="@+id/playback_controls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:background="@color/card_dark"
+            android:visibility="gone"
+            android:layout_marginBottom="8dp">
+
+            <SeekBar
+                android:id="@+id/seekbar_playback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/btn_play_history"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@android:drawable/ic_media_play"
+                    android:contentDescription="Play" />
+
+                <ImageButton
+                    android:id="@+id/btn_pause_history"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@android:drawable/ic_media_pause"
+                    android:contentDescription="Pause" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Connected Mics List -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Connected Microphones"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            android:layout_marginBottom="4dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_array_mics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/card_dark"
+            android:padding="8dp" />
+
+        <!-- Calibration -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_calibrate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calibrate Array"
+            android:layout_marginTop="8dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+        <!-- Export Options -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_export_heatmap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Export Heatmap &amp; Time Series"
+            android:layout_marginTop="4dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+    </LinearLayout>
+</ScrollView>

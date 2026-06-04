@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="@color/card_dark"
+    android:layout_marginBottom="8dp">
+
+    <TextView
+        android:id="@+id/tv_filter_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Butterworth LP"
+        android:textColor="@color/text_primary"
+        android:textStyle="bold"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_filter_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1000 Hz · Q 0.71"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        android:layout_marginTop="4dp" />
+
+    <Button
+        android:id="@+id/btn_remove_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove"
+        android:textAllCaps="false"
+        android:layout_marginTop="8dp" />
+</LinearLayout>

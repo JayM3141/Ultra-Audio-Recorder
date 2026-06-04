@@ -1,0 +1,18 @@
+<lint-module
+    format="1"
+    dir="/workspaces/Ultra-Audio-Recorder/app"
+    name=":app"
+    type="APP"
+    maven="UltraAudioRecorder:app:"
+    agpVersion="8.1.4"
+    buildFolder="build"
+    bootClassPath="/workspaces/Ultra-Audio-Recorder/android-sdk/platforms/android-34/android.jar:/workspaces/Ultra-Audio-Recorder/android-sdk/build-tools/33.0.1/core-lambda-stubs.jar"
+    javaSourceLevel="17"
+    compileTarget="android-34"
+    neverShrinking="true">
+  <lintOptions
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>

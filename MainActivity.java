@@ -46,6 +46,11 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
     private static final int PERMISSION_REQUEST_CODE = 100;
     
+    private static final String PREFS_NAME = "UltraAudioPrefs";
+    private static final String PREF_HIGH_RES = "pref_high_res";
+    private static final String PREF_LOW_LATENCY = "pref_low_latency";
+    private static final String PREF_BACKGROUND = "pref_background_recording";
+
     // Core components
     private AudioEngine audioEngine;
     private AudioRecorder audioRecorder;
@@ -120,9 +125,19 @@ public class MainActivity extends AppCompatActivity {
     private void initComponents() {
         audioEngine = new AudioEngine(this);
         audioRecorder = new AudioRecorder();
+        arrayManager = new MicrophoneArrayManager(this);
+
+        // Apply saved audio settings
+        android.content.SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        audioEngine.setLowLatencyMode(prefs.getBoolean(PREF_LOW_LATENCY, true));
+        boolean highResEnabled = prefs.getBoolean(PREF_HIGH_RES, false);
+        if (highResEnabled) {
+            audioEngine.setHighResolutionMode(true);
+            selectedSampleRate = audioEngine.getSampleRate();
+        }
+
         dspProcessor = new DSPProcessor(audioEngine.getSampleRate());
         fftAnalyzer = new FFTAnalyzer(2048, audioEngine.getSampleRate());
-        arrayManager = new MicrophoneArrayManager(this);
         
         // Wire up DSP processor
         dspProcessor.setOutputListener((data, sr, ch) -> {
@@ -171,7 +186,6 @@ public class MainActivity extends AppCompatActivity {
         
         btnRecord.setOnClickListener(v -> toggleRecording());
         btnStop.setOnClickListener(v -> stopAll());
-        btnListen.setOnClickListener(v -> toggleListening());
         
         TextView tvListenStatus = findViewById(R.id.tv_listen_status);
         btnListen.setOnClickListener(v -> {

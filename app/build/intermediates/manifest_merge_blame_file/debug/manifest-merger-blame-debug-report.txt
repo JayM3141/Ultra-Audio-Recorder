@@ -1,0 +1,286 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.ultraaudio.recorder.debug"
+4    android:versionCode="1"
+5    android:versionName="1.0-debug" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="34" />
+10
+11    <!-- Audio Recording Permissions -->
+12    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+12-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:6:5-71
+12-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:6:22-68
+13    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+13-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:7:5-80
+13-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:7:22-77
+14
+15    <!-- USB Permissions -->
+16    <uses-permission android:name="android.permission.USB_PERMISSION" />
+16-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:10:5-73
+16-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:10:22-70
+17
+18    <!-- Bluetooth Permissions -->
+19    <uses-permission android:name="android.permission.BLUETOOTH" />
+19-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:13:5-68
+19-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:13:22-65
+20    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+20-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:14:5-74
+20-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:14:22-71
+21    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+21-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:15:5-76
+21-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:15:22-73
+22    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+22-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:16:5-73
+22-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:16:22-70
+23
+24    <!-- Storage Permissions -->
+25    <uses-permission
+25-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:19:5-20:38
+26        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+26-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:19:22-78
+27        android:maxSdkVersion="32" />
+27-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:20:9-35
+28    <uses-permission
+28-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:21:5-22:38
+29        android:name="android.permission.READ_EXTERNAL_STORAGE"
+29-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:21:22-77
+30        android:maxSdkVersion="32" />
+30-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:22:9-35
+31    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+31-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:23:5-75
+31-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:23:22-72
+32
+33    <!-- Foreground Service -->
+34    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+34-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:26:5-77
+34-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:26:22-74
+35    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+35-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:27:5-88
+35-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:27:22-85
+36    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+36-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:28:5-77
+36-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:28:22-74
+37    <uses-permission android:name="android.permission.WAKE_LOCK" />
+37-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:29:5-68
+37-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:29:22-65
+38
+39    <!-- Network for array sync -->
+40    <uses-permission android:name="android.permission.INTERNET" />
+40-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:32:5-67
+40-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:32:22-64
+41    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+41-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:33:5-79
+41-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:33:22-76
+42    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+42-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:34:5-76
+42-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:34:22-73
+43
+44    <!-- USB Feature -->
+45    <uses-feature
+45-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:37:5-87
+46        android:name="android.hardware.usb.host"
+46-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:37:19-59
+47        android:required="false" />
+47-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:37:60-84
+48    <uses-feature
+48-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:38:5-88
+49        android:name="android.hardware.microphone"
+49-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:38:19-61
+50        android:required="true" />
+50-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:38:62-85
+51    <uses-feature
+51-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:39:5-88
+52        android:name="android.hardware.bluetooth"
+52-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:39:19-60
+53        android:required="false" />
+53-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:39:61-85
+54
+55    <permission
+55-->[androidx.core:core:1.13.0] /home/codespace/.gradle/caches/transforms-3/1e88c8eca5eb47e6dd32ba1d279bd9f4/transformed/core-1.13.0/AndroidManifest.xml:22:5-24:47
+56        android:name="com.ultraaudio.recorder.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+56-->[androidx.core:core:1.13.0] /home/codespace/.gradle/caches/transforms-3/1e88c8eca5eb47e6dd32ba1d279bd9f4/transformed/core-1.13.0/AndroidManifest.xml:23:9-81
+57        android:protectionLevel="signature" />
+57-->[androidx.core:core:1.13.0] /home/codespace/.gradle/caches/transforms-3/1e88c8eca5eb47e6dd32ba1d279bd9f4/transformed/core-1.13.0/AndroidManifest.xml:24:9-44
+58
+59    <uses-permission android:name="com.ultraaudio.recorder.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+59-->[androidx.core:core:1.13.0] /home/codespace/.gradle/caches/transforms-3/1e88c8eca5eb47e6dd32ba1d279bd9f4/transformed/core-1.13.0/AndroidManifest.xml:26:5-97
+59-->[androidx.core:core:1.13.0] /home/codespace/.gradle/caches/transforms-3/1e88c8eca5eb47e6dd32ba1d279bd9f4/transformed/core-1.13.0/AndroidManifest.xml:26:22-94
+60
+61    <application
+61-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:41:5-98:19
+62        android:allowBackup="true"
+62-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:42:9-35
+63        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+63-->[androidx.core:core:1.13.0] /home/codespace/.gradle/caches/transforms-3/1e88c8eca5eb47e6dd32ba1d279bd9f4/transformed/core-1.13.0/AndroidManifest.xml:28:18-86
+64        android:debuggable="true"
+65        android:extractNativeLibs="true"
+66        android:icon="@drawable/ic_launcher"
+66-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:43:9-45
+67        android:label="@string/app_name"
+67-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:44:9-41
+68        android:roundIcon="@drawable/ic_launcher"
+68-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:45:9-50
+69        android:supportsRtl="true"
+69-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:46:9-35
+70        android:theme="@style/Theme.UltraAudioRecorder"
+70-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:47:9-56
+71        android:usesCleartextTraffic="true" >
+71-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:48:9-44
+72        <activity
+72-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:51:9-67:20
+73            android:name="com.ultraaudio.recorder.ui.MainActivity"
+73-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:52:13-44
+74            android:configChanges="orientation|screenSize|keyboardHidden"
+74-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:54:13-74
+75            android:exported="true"
+75-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:53:13-36
+76            android:launchMode="singleTop"
+76-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:55:13-43
+77            android:screenOrientation="portrait" >
+77-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:56:13-49
+78            <intent-filter>
+78-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:57:13-60:29
+79                <action android:name="android.intent.action.MAIN" />
+79-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:58:17-69
+79-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:58:25-66
+80
+81                <category android:name="android.intent.category.LAUNCHER" />
+81-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:59:17-77
+81-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:59:27-74
+82            </intent-filter>
+83            <intent-filter>
+83-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:61:13-63:29
+84                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+84-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:62:17-90
+84-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:62:25-87
+85            </intent-filter>
+86
+87            <meta-data
+87-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:64:13-66:61
+88                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+88-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:65:17-79
+89                android:resource="@xml/usb_device_filter" />
+89-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:66:17-58
+90        </activity>
+91        <activity
+91-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:69:9-72:48
+92            android:name="com.ultraaudio.recorder.ui.SettingsActivity"
+92-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:70:13-48
+93            android:exported="false"
+93-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:71:13-37
+94            android:label="@string/settings" />
+94-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:72:13-45
+95
+96        <service
+96-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:74:9-77:58
+97            android:name="com.ultraaudio.recorder.service.AudioRecordingService"
+97-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:75:13-58
+98            android:exported="false"
+98-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:76:13-37
+99            android:foregroundServiceType="microphone" />
+99-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:77:13-55
+100
+101        <provider
+102            android:name="androidx.core.content.FileProvider"
+102-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:80:13-62
+103            android:authorities="com.ultraaudio.recorder.debug.provider"
+103-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:81:13-60
+104            android:exported="false"
+104-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:82:13-37
+105            android:grantUriPermissions="true" >
+105-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:83:13-47
+106            <meta-data
+106-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:84:13-86:54
+107                android:name="android.support.FILE_PROVIDER_PATHS"
+107-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:85:17-67
+108                android:resource="@xml/file_paths" />
+108-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:86:17-51
+109        </provider>
+110
+111        <receiver
+111-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:89:9-96:20
+112            android:name="com.ultraaudio.recorder.audio.UsbAudioReceiver"
+112-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:90:13-51
+113            android:exported="true" >
+113-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:91:13-36
+114            <intent-filter>
+114-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:92:13-95:29
+115                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+115-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:62:17-90
+115-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:62:25-87
+116                <action android:name="android.hardware.usb.action.USB_DEVICE_DETACHED" />
+116-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:94:17-90
+116-->/workspaces/Ultra-Audio-Recorder/app/src/main/AndroidManifest.xml:94:25-87
+117            </intent-filter>
+118        </receiver>
+119
+120        <provider
+120-->[androidx.emoji2:emoji2:1.3.0] /home/codespace/.gradle/caches/transforms-3/fe395ae03a40cf7494e1742c6bf21810/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+121            android:name="androidx.startup.InitializationProvider"
+121-->[androidx.emoji2:emoji2:1.3.0] /home/codespace/.gradle/caches/transforms-3/fe395ae03a40cf7494e1742c6bf21810/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+122            android:authorities="com.ultraaudio.recorder.debug.androidx-startup"
+122-->[androidx.emoji2:emoji2:1.3.0] /home/codespace/.gradle/caches/transforms-3/fe395ae03a40cf7494e1742c6bf21810/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+123            android:exported="false" >
+123-->[androidx.emoji2:emoji2:1.3.0] /home/codespace/.gradle/caches/transforms-3/fe395ae03a40cf7494e1742c6bf21810/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+124            <meta-data
+124-->[androidx.emoji2:emoji2:1.3.0] /home/codespace/.gradle/caches/transforms-3/fe395ae03a40cf7494e1742c6bf21810/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+125                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+125-->[androidx.emoji2:emoji2:1.3.0] /home/codespace/.gradle/caches/transforms-3/fe395ae03a40cf7494e1742c6bf21810/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+126                android:value="androidx.startup" />
+126-->[androidx.emoji2:emoji2:1.3.0] /home/codespace/.gradle/caches/transforms-3/fe395ae03a40cf7494e1742c6bf21810/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+127            <meta-data
+127-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/codespace/.gradle/caches/transforms-3/00b3e56d98ca5c9a78ee5292c32beb21/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:29:13-31:52
+128                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+128-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/codespace/.gradle/caches/transforms-3/00b3e56d98ca5c9a78ee5292c32beb21/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:30:17-78
+129                android:value="androidx.startup" />
+129-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/codespace/.gradle/caches/transforms-3/00b3e56d98ca5c9a78ee5292c32beb21/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:31:17-49
+130            <meta-data
+130-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/codespace/.gradle/caches/transforms-3/bb0ed7837fcb16870e2546424e85050f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+131                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+131-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/codespace/.gradle/caches/transforms-3/bb0ed7837fcb16870e2546424e85050f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+132                android:value="androidx.startup" />
+132-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/codespace/.gradle/caches/transforms-3/bb0ed7837fcb16870e2546424e85050f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+133        </provider>
+134
+135        <receiver
+135-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/codespace/.gradle/caches/transforms-3/bb0ed7837fcb16870e2546424e85050f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+136            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+136-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/codespace/.gradle/caches/transforms-3/bb0ed7837fcb16870e2546424e85050f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+137            android:directBootAware="false"
+137-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/codespace/.gradle/caches/transforms-3/bb0ed7837fcb16870e2546424e85050f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+138            android:enabled="true"
+138-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/codespace/.gradle/caches/transforms-3/bb0ed7837fcb16870e2546424e85050f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+139            android:exported="true"
+139-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/codespace/.gradle/caches/transforms-3/bb0ed7837fcb16870e2546424e85050f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+140            android:permission="android.permission.DUMP" >
+140-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/codespace/.gradle/caches/transforms-3/bb0ed7837fcb16870e2546424e85050f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+141            <intent-filter>
+141-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/codespace/.gradle/caches/transforms-3/bb0ed7837fcb16870e2546424e85050f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+142                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+142-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/codespace/.gradle/caches/transforms-3/bb0ed7837fcb16870e2546424e85050f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+142-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/codespace/.gradle/caches/transforms-3/bb0ed7837fcb16870e2546424e85050f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+143            </intent-filter>
+144            <intent-filter>
+144-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/codespace/.gradle/caches/transforms-3/bb0ed7837fcb16870e2546424e85050f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+145                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+145-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/codespace/.gradle/caches/transforms-3/bb0ed7837fcb16870e2546424e85050f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+145-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/codespace/.gradle/caches/transforms-3/bb0ed7837fcb16870e2546424e85050f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+146            </intent-filter>
+147            <intent-filter>
+147-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/codespace/.gradle/caches/transforms-3/bb0ed7837fcb16870e2546424e85050f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+148                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+148-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/codespace/.gradle/caches/transforms-3/bb0ed7837fcb16870e2546424e85050f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+148-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/codespace/.gradle/caches/transforms-3/bb0ed7837fcb16870e2546424e85050f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+149            </intent-filter>
+150            <intent-filter>
+150-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/codespace/.gradle/caches/transforms-3/bb0ed7837fcb16870e2546424e85050f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+151                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+151-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/codespace/.gradle/caches/transforms-3/bb0ed7837fcb16870e2546424e85050f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+151-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/codespace/.gradle/caches/transforms-3/bb0ed7837fcb16870e2546424e85050f/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+152            </intent-filter>
+153        </receiver>
+154    </application>
+155
+156</manifest>

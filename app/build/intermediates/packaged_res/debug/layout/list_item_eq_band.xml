@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="@color/card_dark"
+    android:layout_marginBottom="8dp">
+
+    <TextView
+        android:id="@+id/tv_eq_band_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Band 1"
+        android:textColor="@color/text_primary"
+        android:textStyle="bold"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_eq_band_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1000 Hz · Q 1.00"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        android:layout_marginTop="4dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gain"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp" />
+
+        <SeekBar
+            android:id="@+id/seekbar_eq_band_gain"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="48"
+            android:progress="24"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/tv_eq_band_gain"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:text="0.0dB"
+            android:textColor="@color/accent"
+            android:textSize="12sp"
+            android:textAlignment="textEnd" />
+    </LinearLayout>
+</LinearLayout>
