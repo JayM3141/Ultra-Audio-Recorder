@@ -4,12 +4,20 @@
         "source": "com.ultraaudio.recorder.app-main-33:/layout/fragment_recorder.xml"
     },
     {
+        "merged": "com.ultraaudio.recorder.app-merged_res-31:/layout_list_item_eq_band.xml.flat",
+        "source": "com.ultraaudio.recorder.app-main-33:/layout/list_item_eq_band.xml"
+    },
+    {
         "merged": "com.ultraaudio.recorder.app-merged_res-31:/layout_fragment_analysis.xml.flat",
         "source": "com.ultraaudio.recorder.app-main-33:/layout/fragment_analysis.xml"
     },
     {
         "merged": "com.ultraaudio.recorder.app-merged_res-31:/drawable_btn_record.xml.flat",
         "source": "com.ultraaudio.recorder.app-main-33:/drawable/btn_record.xml"
+    },
+    {
+        "merged": "com.ultraaudio.recorder.app-merged_res-31:/layout_activity_array_config.xml.flat",
+        "source": "com.ultraaudio.recorder.app-main-33:/layout/activity_array_config.xml"
     },
     {
         "merged": "com.ultraaudio.recorder.app-merged_res-31:/layout_fragment_dsp.xml.flat",
@@ -42,6 +50,14 @@
     {
         "merged": "com.ultraaudio.recorder.app-merged_res-31:/layout_fragment_array.xml.flat",
         "source": "com.ultraaudio.recorder.app-main-33:/layout/fragment_array.xml"
+    },
+    {
+        "merged": "com.ultraaudio.recorder.app-merged_res-31:/layout_list_item_array_mic.xml.flat",
+        "source": "com.ultraaudio.recorder.app-main-33:/layout/list_item_array_mic.xml"
+    },
+    {
+        "merged": "com.ultraaudio.recorder.app-merged_res-31:/layout_list_item_filter.xml.flat",
+        "source": "com.ultraaudio.recorder.app-main-33:/layout/list_item_filter.xml"
     },
     {
         "merged": "com.ultraaudio.recorder.app-merged_res-31:/xml_usb_device_filter.xml.flat",

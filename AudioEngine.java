@@ -28,6 +28,8 @@ public class AudioEngine {
     private int channelCount = 1;
     private int audioFormat = AudioFormat.ENCODING_PCM_FLOAT;
     private int bufferSize;
+    private boolean lowLatencyMode = true;
+    private boolean highResolutionMode = false;
     
     // Per-channel gain array (supports up to 8 channels)
     private float[] channelGains = new float[8];
@@ -78,6 +80,17 @@ public class AudioEngine {
     public void setSampleRate(int rate) {
         this.sampleRate = rate;
         recalculateBufferSize();
+    }
+    
+    public void setLowLatencyMode(boolean enabled) {
+        this.lowLatencyMode = enabled;
+    }
+    
+    public void setHighResolutionMode(boolean enabled) {
+        this.highResolutionMode = enabled;
+        if (enabled && sampleRate < 96000) {
+            setSampleRate(96000);
+        }
     }
     
     public void setChannelConfig(int channels) {
@@ -266,7 +279,7 @@ public class AudioEngine {
             
             int outBufSize = AudioTrack.getMinBufferSize(sampleRate, outMask, audioFormat);
             
-            audioTrack = new AudioTrack.Builder()
+            AudioTrack.Builder builder = new AudioTrack.Builder()
                 .setAudioAttributes(new AudioAttributes.Builder()
                     .setUsage(AudioAttributes.USAGE_MEDIA)
                     .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
@@ -276,10 +289,16 @@ public class AudioEngine {
                     .setSampleRate(sampleRate)
                     .setChannelMask(outMask)
                     .build())
-                .setBufferSizeInBytes(outBufSize)
-                .setTransferMode(AudioTrack.MODE_STREAM)
-                .setPerformanceMode(AudioTrack.PERFORMANCE_MODE_LOW_LATENCY)
-                .build();
+                .setBufferSizeInBytes(outBufSize);
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                builder.setTransferMode(AudioTrack.MODE_STREAM);
+                if (lowLatencyMode) {
+                    builder.setPerformanceMode(AudioTrack.PERFORMANCE_MODE_LOW_LATENCY);
+                }
+            }
+
+            audioTrack = builder.build();
             
             if (selectedOutputDevice != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 audioTrack.setPreferredDevice(selectedOutputDevice);

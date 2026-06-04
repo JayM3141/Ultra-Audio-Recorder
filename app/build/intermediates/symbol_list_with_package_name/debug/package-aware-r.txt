@@ -3134,6 +3134,7 @@ id btn_pause_history
 id btn_play_history
 id btn_playback_mode
 id btn_record
+id btn_remove_filter
 id btn_settings
 id btn_spectrogram_view
 id btn_start_array
@@ -3412,6 +3413,7 @@ id search_plate
 id search_src_text
 id search_voice_btn
 id seekbar_agc_target
+id seekbar_eq_band_gain
 id seekbar_gain
 id seekbar_noise_reduction
 id seekbar_noise_threshold
@@ -3526,9 +3528,16 @@ id transition_transform
 id triangle
 id tv_agc_target
 id tv_duration
+id tv_eq_band_details
+id tv_eq_band_gain
+id tv_eq_band_label
+id tv_filter_details
+id tv_filter_label
 id tv_gain_value
 id tv_listen_status
 id tv_main_gain_val
+id tv_mic_label
+id tv_mic_status
 id tv_noise_reduction
 id tv_noise_threshold
 id tv_status
@@ -3665,6 +3674,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_array_config
 layout activity_main
 layout activity_settings
 layout custom_dialog
@@ -3691,6 +3701,9 @@ layout fragment_files
 layout fragment_recorder
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout list_item_array_mic
+layout list_item_eq_band
+layout list_item_filter
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title

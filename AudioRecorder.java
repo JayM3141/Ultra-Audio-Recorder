@@ -268,7 +268,9 @@ public class AudioRecorder implements AudioEngine.AudioDataListener {
     @Override
     public void onAudioData(float[] data, int sampleRate, int channels) {
         if (isRecording.get()) {
-            writeQueue.offer(data);
+            float[] copy = new float[data.length];
+            System.arraycopy(data, 0, copy, 0, data.length);
+            writeQueue.offer(copy);
         }
     }
     

@@ -23,6 +23,10 @@ import com.ultraaudio.recorder.dsp.DSPProcessor;
 
 public class DSPFragment extends Fragment {
     private DSPProcessor dspProcessor;
+    private RecyclerView rvEqBands;
+    private RecyclerView rvFilters;
+    private EqBandAdapter eqBandAdapter;
+    private FilterAdapter filterAdapter;
     
     @Nullable
     @Override
@@ -35,6 +39,14 @@ public class DSPFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         
         dspProcessor = ((MainActivity) requireActivity()).getDSPProcessor();
+        rvEqBands = view.findViewById(R.id.rv_eq_bands);
+        rvFilters = view.findViewById(R.id.rv_filters);
+        eqBandAdapter = new EqBandAdapter();
+        filterAdapter = new FilterAdapter();
+        rvEqBands.setLayoutManager(new LinearLayoutManager(requireContext()));
+        rvEqBands.setAdapter(eqBandAdapter);
+        rvFilters.setLayoutManager(new LinearLayoutManager(requireContext()));
+        rvFilters.setAdapter(filterAdapter);
         
         // Master DSP switch
         Switch masterSwitch = view.findViewById(R.id.switch_dsp_master);
@@ -58,6 +70,9 @@ public class DSPFragment extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View v, int pos, long id) {
                 int[] counts = {4, 6, 8, 10, 15, 20, 31, 60};
                 dspProcessor.getEqualizer().setBandCount(counts[pos]);
+                if (eqBandAdapter != null) {
+                    eqBandAdapter.notifyDataSetChanged();
+                }
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {}
@@ -122,9 +137,12 @@ public class DSPFragment extends Fragment {
             dspProcessor.getFilterBank().setEnabled(checked));
         
         view.findViewById(R.id.btn_add_filter).setOnClickListener(v -> {
-            // Add default high-pass filter at 80Hz
+            // Add a Butterworth low-pass filter at 1000 Hz by default
             dspProcessor.getFilterBank().addFilter(
-                DSPProcessor.FilterBank.FilterType.HIGH_PASS, 80f, 0.707f);
+                DSPProcessor.FilterBank.FilterType.BUTTERWORTH_LP, 1000f, 0.707f);
+            if (filterAdapter != null) {
+                filterAdapter.notifyDataSetChanged();
+            }
         });
         
         // Reverb
@@ -158,5 +176,94 @@ public class DSPFragment extends Fragment {
         Switch bssSwitch = view.findViewById(R.id.switch_bss);
         bssSwitch.setOnCheckedChangeListener((btn, checked) -> 
             dspProcessor.getBss().setEnabled(checked));
+    }
+
+    private class EqBandAdapter extends RecyclerView.Adapter<EqBandAdapter.BandViewHolder> {
+        @NonNull
+        @Override
+        public BandViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.list_item_eq_band, parent, false);
+            return new BandViewHolder(view);
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull BandViewHolder holder, int position) {
+            DSPProcessor.EQBand band = dspProcessor.getEqualizer().getBands().get(position);
+            holder.label.setText(String.format("Band %d", position + 1));
+            holder.details.setText(String.format("%.0f Hz · Q %.2f", band.getFrequency(), band.getQ()));
+            holder.gainValue.setText(String.format("%.1fdB", band.getGain()));
+            holder.gainSeekBar.setMax(48);
+            holder.gainSeekBar.setProgress((int) (band.getGain() + 24));
+            holder.gainSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                    float gain = progress - 24;
+                    band.setParameters(band.getFrequency(), band.getQ(), gain);
+                    holder.gainValue.setText(String.format("%.1fdB", gain));
+                }
+                @Override public void onStartTrackingTouch(SeekBar seekBar) {}
+                @Override public void onStopTrackingTouch(SeekBar seekBar) {}
+            });
+        }
+
+        @Override
+        public int getItemCount() {
+            return dspProcessor.getEqualizer().getBands().size();
+        }
+
+        class BandViewHolder extends RecyclerView.ViewHolder {
+            TextView label;
+            TextView details;
+            TextView gainValue;
+            SeekBar gainSeekBar;
+
+            BandViewHolder(@NonNull View itemView) {
+                super(itemView);
+                label = itemView.findViewById(R.id.tv_eq_band_label);
+                details = itemView.findViewById(R.id.tv_eq_band_details);
+                gainValue = itemView.findViewById(R.id.tv_eq_band_gain);
+                gainSeekBar = itemView.findViewById(R.id.seekbar_eq_band_gain);
+            }
+        }
+    }
+
+    private class FilterAdapter extends RecyclerView.Adapter<FilterAdapter.FilterViewHolder> {
+        @NonNull
+        @Override
+        public FilterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.list_item_filter, parent, false);
+            return new FilterViewHolder(view);
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull FilterViewHolder holder, int position) {
+            DSPProcessor.BiquadFilter filter = dspProcessor.getFilterBank().getFilters().get(position);
+            holder.title.setText(filter.getType().name().replace('_', ' '));
+            holder.details.setText(String.format("%.0f Hz · Q %.2f", filter.getFrequency(), filter.getQ()));
+            holder.removeButton.setOnClickListener(v -> {
+                dspProcessor.getFilterBank().removeFilter(position);
+                notifyDataSetChanged();
+            });
+        }
+
+        @Override
+        public int getItemCount() {
+            return dspProcessor.getFilterBank().getFilters().size();
+        }
+
+        class FilterViewHolder extends RecyclerView.ViewHolder {
+            TextView title;
+            TextView details;
+            View removeButton;
+
+            FilterViewHolder(@NonNull View itemView) {
+                super(itemView);
+                title = itemView.findViewById(R.id.tv_filter_label);
+                details = itemView.findViewById(R.id.tv_filter_details);
+                removeButton = itemView.findViewById(R.id.btn_remove_filter);
+            }
+        }
     }
 }
