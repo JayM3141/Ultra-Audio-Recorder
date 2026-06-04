@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "com.ultraaudio.recorder.app-merged_res-31:/layout_fragment_recorder.xml.flat",
+        "source": "com.ultraaudio.recorder.app-main-33:/layout/fragment_recorder.xml"
+    },
+    {
+        "merged": "com.ultraaudio.recorder.app-merged_res-31:/layout_fragment_analysis.xml.flat",
+        "source": "com.ultraaudio.recorder.app-main-33:/layout/fragment_analysis.xml"
+    },
+    {
+        "merged": "com.ultraaudio.recorder.app-merged_res-31:/drawable_btn_record.xml.flat",
+        "source": "com.ultraaudio.recorder.app-main-33:/drawable/btn_record.xml"
+    },
+    {
+        "merged": "com.ultraaudio.recorder.app-merged_res-31:/layout_fragment_dsp.xml.flat",
+        "source": "com.ultraaudio.recorder.app-main-33:/layout/fragment_dsp.xml"
+    },
+    {
+        "merged": "com.ultraaudio.recorder.app-merged_res-31:/xml_file_paths.xml.flat",
+        "source": "com.ultraaudio.recorder.app-main-33:/xml/file_paths.xml"
+    },
+    {
+        "merged": "com.ultraaudio.recorder.app-merged_res-31:/layout_activity_settings.xml.flat",
+        "source": "com.ultraaudio.recorder.app-main-33:/layout/activity_settings.xml"
+    },
+    {
+        "merged": "com.ultraaudio.recorder.app-merged_res-31:/drawable_btn_circle.xml.flat",
+        "source": "com.ultraaudio.recorder.app-main-33:/drawable/btn_circle.xml"
+    },
+    {
+        "merged": "com.ultraaudio.recorder.app-merged_res-31:/layout_fragment_files.xml.flat",
+        "source": "com.ultraaudio.recorder.app-main-33:/layout/fragment_files.xml"
+    },
+    {
+        "merged": "com.ultraaudio.recorder.app-merged_res-31:/drawable_ic_launcher.xml.flat",
+        "source": "com.ultraaudio.recorder.app-main-33:/drawable/ic_launcher.xml"
+    },
+    {
+        "merged": "com.ultraaudio.recorder.app-merged_res-31:/layout_activity_main.xml.flat",
+        "source": "com.ultraaudio.recorder.app-main-33:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.ultraaudio.recorder.app-merged_res-31:/layout_fragment_array.xml.flat",
+        "source": "com.ultraaudio.recorder.app-main-33:/layout/fragment_array.xml"
+    },
+    {
+        "merged": "com.ultraaudio.recorder.app-merged_res-31:/xml_usb_device_filter.xml.flat",
+        "source": "com.ultraaudio.recorder.app-main-33:/xml/usb_device_filter.xml"
+    },
+    {
+        "merged": "com.ultraaudio.recorder.app-merged_res-31:/layout_fragment_dashboard.xml.flat",
+        "source": "com.ultraaudio.recorder.app-main-33:/layout/fragment_dashboard.xml"
+    }
+]
